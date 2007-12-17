@@ -11,7 +11,6 @@ Patch1:		pwauth-2.3.2-config.diff
 Patch2:		pwauth-2.3.2-pam.diff
 Patch3:		pwauth-2.3.2-server.diff
 BuildRequires:	pam-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Pwauth is an authenticator designed to be used with
