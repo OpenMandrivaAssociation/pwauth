@@ -1,17 +1,19 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
-Version:	2.3.2
-Release:	%mkrel 4
+Version:	2.3.6
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
 URL:		http://www.unixpapa.com/pwauth/
-Source0:	http://www.unixpapa.com/software/%{name}-%{version}.tar.bz2
+Source0:	http://www.unixpapa.com/software/%{name}-%{version}.tar.gz
 Source1:	pwauth.pam
-Patch1:		pwauth-2.3.2-config.diff
+Patch0:		pwauth-typo_fix.diff
+Patch1:		pwauth-config.diff
 Patch2:		pwauth-2.3.2-pam.diff
 Patch3:		pwauth-2.3.2-server.diff
+Patch4:		pwauth-ldflags_fix.diff
 BuildRequires:	pam-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Pwauth is an authenticator designed to be used with
@@ -30,18 +32,21 @@ password database.
 %prep
 
 %setup -q
+%patch0 -p0
 %patch1 -p0
 %patch2 -p0
 %patch3 -p1
+%patch4 -p0
 
 cp %{SOURCE1} pwauth.pam
 
 %build
+%serverbuild
 
-%make CFLAGS="%{optflags}" LIB="-lpam -ldl"
+%make CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS -Wl,--as-needed -Wl,--no-undefined" LIB="-lpam -ldl"
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_sysconfdir}/pam.d
 install -d %{buildroot}%{_bindir}
@@ -53,7 +58,7 @@ install -m0644 pwauth.pam %{buildroot}%{_sysconfdir}/pam.d/pwauth
 install -m0644 pwauth.pam %{buildroot}%{_sysconfdir}/pam.d/unixgroup
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -62,5 +67,3 @@ install -m0644 pwauth.pam %{buildroot}%{_sysconfdir}/pam.d/unixgroup
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/pam.d/unixgroup
 %attr(04550,root,apache) %{_bindir}/pwauth
 %attr(04550,root,apache) %{_bindir}/unixgroup
-
-
