@@ -1,7 +1,7 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
-Version:	2.3.6
-Release:	%mkrel 2
+Version:	2.3.7
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
 URL:		http://www.unixpapa.com/pwauth/
