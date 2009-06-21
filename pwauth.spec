@@ -1,11 +1,11 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
-Version:	2.3.7
+Version:	2.3.8
 Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
-URL:		http://www.unixpapa.com/pwauth/
-Source0:	http://www.unixpapa.com/software/%{name}-%{version}.tar.gz
+URL:		http://code.google.com/p/pwauth/
+Source0:	http://pwauth.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	pwauth.pam
 Patch0:		pwauth-typo_fix.diff
 Patch1:		pwauth-config.diff
@@ -35,7 +35,7 @@ password database.
 %patch0 -p0
 %patch1 -p0
 %patch2 -p0
-%patch3 -p1
+%patch3 -p0
 %patch4 -p0
 
 cp %{SOURCE1} pwauth.pam
@@ -43,7 +43,7 @@ cp %{SOURCE1} pwauth.pam
 %build
 %serverbuild
 
-%make CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS -Wl,--as-needed -Wl,--no-undefined" LIB="-lpam -ldl"
+%make CFLAGS="$CFLAGS" LDFLAGS="%{ldflags}" LIB="-lpam -ldl"
 
 %install
 rm -rf %{buildroot}
