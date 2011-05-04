@@ -1,7 +1,7 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
 Version:	2.3.8
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD
 Group:		System/Servers
 URL:		http://code.google.com/p/pwauth/
