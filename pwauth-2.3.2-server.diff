@@ -1,0 +1,11 @@
+--- config.h	2009-06-21 14:43:02.000000000 +0200
++++ config.h.oden	2009-06-21 14:44:10.000000000 +0200
+@@ -264,7 +264,7 @@
+  * to change the uid list.
+  */
+ 
+-#define SERVER_UIDS 72		/* user "nobody" */
++/* #define SERVER_UIDS 72		/* user "nobody" */
+ 
+ 
+ /* If MIN_UNIX_UID is defined to an integer, logins with uid numbers less than

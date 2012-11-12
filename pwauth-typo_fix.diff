@@ -1,0 +1,11 @@
+--- pwauth.h	2009-03-10 16:10:46.000000000 +0100
++++ pwauth.h.oden	2009-06-21 14:40:12.000000000 +0200
+@@ -34,7 +34,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <string.h>
++#include <strings.h>
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <sys/types.h>

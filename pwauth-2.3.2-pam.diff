@@ -1,0 +1,15 @@
+--- main.c	2009-04-03 16:02:38.000000000 +0200
++++ main.c.oden	2009-06-21 14:41:31.000000000 +0200
+@@ -52,7 +52,11 @@ main(int argc, char **argv)
+     char login[BFSZ+1], passwd[BFSZ+1];
+     char *c, *strchr();
+ #endif
+-    int uid,i;
++
++#ifdef SERVER_UIDS
++    int uid;
++#endif
++    int i;
+     int status;
+     struct rlimit rlim;
+ 
