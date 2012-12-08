@@ -1,7 +1,7 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
 Version:	2.3.9
-Release:	%mkrel 1
+Release:	%mkrel 4
 License:	BSD
 Group:		System/Servers
 URL:		http://code.google.com/p/pwauth/
@@ -67,3 +67,83 @@ rm -rf %{buildroot}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/pam.d/unixgroup
 %attr(04550,root,apache) %{_bindir}/pwauth
 %attr(04550,root,apache) %{_bindir}/unixgroup
+
+
+%changelog
+* Mon May 30 2011 Oden Eriksson <oeriksson@mandriva.com> 2.3.9-1mdv2011.0
++ Revision: 681820
+- 2.3.9
+
+* Thu May 05 2011 Oden Eriksson <oeriksson@mandriva.com> 2.3.8-4
++ Revision: 667899
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 2.3.8-3mdv2011.0
++ Revision: 607248
+- rebuild
+
+* Sun Mar 14 2010 Oden Eriksson <oeriksson@mandriva.com> 2.3.8-2mdv2010.1
++ Revision: 519062
+- rebuild
+
+* Sun Jun 21 2009 Oden Eriksson <oeriksson@mandriva.com> 2.3.8-1mdv2010.0
++ Revision: 387621
+- 2.3.8
+- new url
+- rediffed patches
+
+* Wed Mar 11 2009 Oden Eriksson <oeriksson@mandriva.com> 2.3.7-1mdv2009.1
++ Revision: 353771
+- 2.3.7
+
+* Mon Dec 22 2008 Oden Eriksson <oeriksson@mandriva.com> 2.3.6-2mdv2009.1
++ Revision: 317558
+- rebuild
+
+* Sun Aug 03 2008 Oden Eriksson <oeriksson@mandriva.com> 2.3.6-1mdv2009.0
++ Revision: 262179
+- 2.3.6
+- rediffed P1
+- fixed a typo (P0)
+- set ldflags (P4)
+- use %%serverbuild macro
+
+* Wed Jun 18 2008 Thierry Vignaud <tv@mandriva.org> 2.3.2-4mdv2009.0
++ Revision: 225118
+- rebuild
+
+* Wed Mar 05 2008 Oden Eriksson <oeriksson@mandriva.com> 2.3.2-3mdv2008.1
++ Revision: 179371
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Wed Mar 07 2007 Oden Eriksson <oeriksson@mandriva.com> 2.3.2-2mdv2007.0
++ Revision: 134448
+- Import pwauth
+
+* Wed Mar 07 2007 Oden Eriksson <oeriksson@mandriva.com> 2.3.2-2
+- bunzip sources
+
+* Sat Feb 11 2006 Oden Eriksson <oeriksson@mandriva.com> 2.3.2-1mdk
+- 2.3.2
+- drop P0, seems implemented upstream
+- rediffed patches; P1,P2,P3
+
+* Sat Feb 11 2006 Oden Eriksson <oeriksson@mandriva.com> 2.2.8-4mdk
+- use "include" directive instead of deprecated pam_stack module
+
+* Sun Jan 01 2006 Mandriva Linux Team <http://www.mandrivaexpert.com/> 2.2.8-3mdk
+- Rebuild
+
+* Tue May 03 2005 Luca Berra <bluca@vodka.it> 2.2.8-2mdk
+- disable the SERVER_UID feature, apache userid is dynamic
+
+* Mon Feb 14 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 2.2.8-1mdk
+- initial Mandrakelinux package
+
