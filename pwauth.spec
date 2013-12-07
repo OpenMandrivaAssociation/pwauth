@@ -1,7 +1,7 @@
 Summary:	A Unix Web Authenticator
 Name:		pwauth
 Version:	2.3.9
-Release:	6
+Release:	7
 License:	BSD
 Group:		System/Servers
 Url:		http://code.google.com/p/pwauth/
