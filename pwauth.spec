@@ -4,7 +4,7 @@ Version:	2.3.9
 Release:	14
 License:	BSD
 Group:		System/Servers
-Url:		http://code.google.com/p/pwauth/
+Url:		https://code.google.com/p/pwauth/
 Source0:	http://pwauth.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	pwauth.pam
 Patch0:		pwauth-typo_fix.diff
