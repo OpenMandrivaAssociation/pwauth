@@ -12,6 +12,7 @@ Patch1:		pwauth-config.diff
 Patch2:		pwauth-2.3.2-pam.diff
 Patch3:		pwauth-2.3.2-server.diff
 Patch4:		pwauth-ldflags_fix.diff
+BuildRequires:	make
 BuildRequires:	pam-devel
 
 %description
